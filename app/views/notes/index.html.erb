@@ -1,8 +1,14 @@
-<% @notes.each do |note|%>
-  <h2><%= note.title %></h2>
-  <h3> <%= note.content %> </h3>
-  <%= note.comments do |comment|%>
-    <h3><%= comment.title %></h3>
-    <h3><%= comment.content %></h3>
+<div class='jumbotron'>
+  <h1>Quick Notes</h1>
+</div>
+<div class='container'>
+  <% @notes.each do |note|%>
+  <div class='notes-container'>
+    <h2><%= note.title %></h2>
+    <p> <%= note.content %> </p>
+    <% note.comments.each do |comment| %>
+      <p><%= comment.title %></p>
+    <% end %>
+  </div>
   <% end %>
-<% end %>
+</div>
