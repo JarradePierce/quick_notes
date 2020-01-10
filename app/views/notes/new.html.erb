@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1>New Note</h1>
+</div>
+<div class='container new-note-container'>
+  <%= form_for @note, url: {action: 'create'} do |note| %>
+    <%= note.text_field :title, placeholder: 'Title', class: "new-note-title" %>
+    <%= note.text_area :content, placeholder: 'Content', class: 'new-note-content' %>
+    <button class='btn btn-success new-note-submit' type='submit'>Create Note</button>
+    <% end %>
+</div>

@@ -6,6 +6,16 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(note_params)
+
+    respond_to do |format|
+      if @note.save
+        format.html { redirect_to notes_path, notice: "created new note" }
+        format.json { render :index, status: :created, location: @note }
+      else
+        format.html { redirect_to root_path, notice: "failed to create note" }
+        format.json { render json: @note.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def index

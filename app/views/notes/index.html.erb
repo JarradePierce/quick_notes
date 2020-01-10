@@ -4,7 +4,7 @@
 <div class='container'>
   <% @notes.each do |note|%>
   <div class='notes-container'>
-    <h2><%= note.title %></h2>
+    <h3><%= note.title %></h3>
     <p> <%= note.content %> </p>
     <% note.comments.each do |comment| %>
       <p><%= comment.title %></p>

@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <ul class="nav nav-pills justify-content-left">
+      <li class='nav-link'>
+        <%= button_to "Home", root_path, method: :get %>
+      </li>
+      <li class='nav-link'>
+        <%= button_to "New Note", new_note_path, method: :get %>
+      </li>
+    </ul>
     <%= yield %>
   </body>
 </html>
